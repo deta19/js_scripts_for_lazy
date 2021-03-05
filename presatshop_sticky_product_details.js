@@ -4,15 +4,13 @@ $(document).ready(function(){
   var header_wrap = document.querySelector('#header');
   var header_top  = document.querySelector('.header-top');
 
-  window.addEventListener('scroll', makeitstick);
-});
-
-function makeitstick() {
-
-		if( $('body#product').length > 0 ) {
+  window.addEventListener('scroll', function() {
+  	if( $('body#product').length > 0 ) {
 	    	makeStaticProductSidebar( this.scrollY, header_wrap, this.innerWidth );
 	    }
-}
+  
+  });
+});
 
 function makeStaticProductSidebar( scrollY , header_wrap, scrollX) {
 	var product_image_wrapper = document.querySelector('.product-image-wrapper');
