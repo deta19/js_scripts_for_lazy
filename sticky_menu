@@ -1,0 +1,26 @@
+/* menu sticky*/
+$(document).ready(function(){
+  var header_wrap = document.querySelector('#header');
+  var header_top  = document.querySelector('.header-top');
+
+  window.addEventListener('scroll', function() {
+	    	makeMenuSticky( this.scrollY, header_wrap, this.innerWidth );
+  
+  });
+});
+
+function makeMenuSticky( scrollY , header_wrap, scrollX) {
+	var navbar = document.querySelector('.header-top .inner');
+
+		if( scrollY >= header_wrap.offsetHeight && scrollX >= 768) {       
+        if(!navbar.classList.contains("active")) {
+            navbar.classList.add("active");
+        }        
+    }
+    else  {
+        if(navbar.classList.contains("active")){
+           navbar.classList.remove("active"); 
+           navbar.style.top = 0;
+        }
+    } 
+}
