@@ -12,15 +12,19 @@ $(document).ready(function(){
 function makeMenuSticky( scrollY , header_wrap, scrollX) {
 	var navbar = document.querySelector('.header-top .inner');
 
-		if( scrollY >= header_wrap.offsetHeight && scrollX >= 768) {       
-        if(!navbar.classList.contains("active")) {
-            navbar.classList.add("active");
-        }        
-    }
-    else  {
-        if(navbar.classList.contains("active")){
-           navbar.classList.remove("active"); 
-           navbar.style.top = 0;
-        }
-    } 
+	// if( scrollY > header_wrap.offsetHeight && scrollX >= 768) {       
+	if( scrollY > header_wrap.offsetHeight ) {       
+      if(!navbar.classList.contains("active")) {
+          navbar.classList.add("active");
+          console.log("add active");
+      }        
+  }
+  else  {
+
+      if(navbar.classList.contains("active")){
+         navbar.classList.remove("active"); 
+         navbar.style.top = 0;
+          console.log("delete active");
+      }
+  } 
 }
